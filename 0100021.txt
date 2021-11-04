@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Error404-pagenotfound</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="/pgofoz.css" type="text/css">
+<meta name="keywords" content=
+"Project Gutenberg, australia, classics, great books, etext, etexts, text, texts, book, books, ebook, ebooks">
+<meta name="Description" content="Free ebooks">
+</head>
+<body>
+<!-- start navigation -->
+<table width="70%" border="1" cellpadding="0" cellspacing="0"
+summary="" align="center">
+<tr>
+<td align="center" style="width: 214px"><img src="/pga-australia.jpg" width="94" height="84" alt=""></td>
+<td bgcolor="#FFE4E1" align="center" height="64" style="width: 628px"><font color="#800000" size="5">
+<b>Project Gutenberg Australia<br>
+</b></font><font color="#800000" size="4"><i>a treasure-trove of literature</i><br>
+</font>treasure found hidden with no evidence of ownership </td>
+</tr>
+</table>
+<p>&nbsp;</p>
+
+<p style="text-align: center"><a name="home"></a>
+<img alt="" src="/images/bullet_p.gif" width="27" height="12" border="0"><a href="/index.html">Home</a>
+<img alt="" src="/images/bullet_p.gif" width="27" height="12" border="0"><a href="/plusfifty.html">Our FREE ebooks</a>
+<img alt="" src="/images/bullet_p.gif" width="27" height="12" border="0"><a href="/searchresults.html">Search Site</a>
+<img alt="" src="/images/bullet_p.gif" width="27" height="12" border="0"><a href="/my-site-map.html">Site Map</a>
+<img alt="" src="/images/bullet_p.gif" width="27" height="12" border="0"><a href="/contact.html">Contact Us</a>
+<img alt="" src="/images/bullet_p.gif" width="27" height="12" border="0"><a href="/help.html">Reading, Downloading and Converting files</a>
+<table width="70%" border="0" summary="" align="center">
+<tr>
+<td><hr></td>
+</tr>
+</table>
+<!-- end navigation -->
+
+<p>&nbsp;</p>
+<h2>Project Gutenberg Australia</h2>
+<h2>Error Message</h2>
+<p align="center"><b>The page you tried to view does not exist. Use the above
+  links to search our site<br>or go to our home page.</b></p>
+
+<h3>* * * * For our Devonshire Street cemetery page, click <a href="/Devonshire-street/__devonshire-home.html">here</a> * * * *</h3>
+
+<p align="center">&nbsp;</p>
+
+<!-- start footer include -->
+<ul style="margin-left:10%">
+<li><a href="https://valiantglass.com.au">Glass Sydney</a> - Valiant Glass - Glass & Mirrors Specialists in Sydney</li>
+<li><a href="https://www.freshflowersandgifts.com.au/">Fresh Flowers and Gifts Australia</a></li>
+<li><a href="https://www.freshflowersandgifts.co.nz/">Fresh Flowers and Gifts New Zealand</a></li>
+</ul>
+<!-- end footer include -->
+</body>
+</html>
