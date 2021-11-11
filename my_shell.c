@@ -39,6 +39,51 @@ char **tokenize(char *line)
 }
 
 
+int ls(char **tokens){
+
+	int pid = fork();
+	
+		printf("\npid - %d\n",pid);
+	
+		
+
+		if (pid == 0){
+			execlp("ls","ls","-a");
+			//execlp(tokens[0],tokens[0],tokens[1]);
+		
+		}
+
+		else{
+		
+			wait(NULL);
+			printf("Done ls!\n");
+		}
+}
+
+int echo(char **tokens){
+	int i;	
+	int pid = fork();
+
+	if (pid == 0){
+		
+
+		for (i=1;tokens[i] != NULL;i++){
+		
+			printf("%s ",tokens[i]);
+		
+		
+		}
+
+	}
+
+	else{
+		
+		wait(NULL);
+		printf("Done echo!\n");
+	}
+
+}
+
 int main(int argc, char* argv[]) {
 	char  line[MAX_INPUT_SIZE];            
 	char  **tokens;              
@@ -63,7 +108,24 @@ int main(int argc, char* argv[]) {
 		for(i=0;tokens[i]!=NULL;i++){
 			printf("found token %s (remove this debug output later)\n", tokens[i]);
 		}
-       
+		
+		for (i=0;i<=sizeof(tokens);i++){printf("\nToken[%d] = %s",i,tokens[i]);}
+		printf("\n\n");
+
+		if (1==1){
+
+			ls(**tokens);
+		
+		
+		
+		} // if this doesnt work as well might be better to fork here rather than in the function it self
+
+
+
+
+
+
+
 		// Freeing the allocated memory	
 		for(i=0;tokens[i]!=NULL;i++){
 			free(tokens[i]);
