@@ -4,6 +4,59 @@
 //For EXIT codes and error handling
 #include <errno.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+
+int main(){
+
+	int pid = fork();
+
+	if (pid == 0) {
+	
+		execlp("ls","ls",NULL);
+		printf("this will only happen if the exec fails \n");
+
+	
+	}
+
+	else {
+
+		wait(NULL);
+
+		printf("All Child Process Have Finished!\n");
+	
+
+	}
+
+
+	return 0; 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 
 // 
@@ -20,6 +73,9 @@
 //
 
 
+
+
+/*
 void _ls(const char *dir,int op_a,int op_l)
 {
 	//Here we will list the directory
@@ -79,3 +135,5 @@ int main(int argc, const char *argv[])
 	}
 	return 0;
 }
+
+*/
