@@ -38,25 +38,50 @@ char **tokenize(char *line)
   return tokens;
 }
 
+int cat(char **tokens){
+
+	int pid;
+	printf("%s",tokens[1]);
+	pid = fork();
+
+	if (pid == 0){
+	
+		execlp("cat","cat",tokens[1]);
+	//	execlp(tokens[0],tokens[0],tokens[1]);
+	//	execlp(tokens);	
+	
+	}
+
+	else{
+	
+		wait(NULL);
+		printf("\nDone Cat!\n");
+	
+	
+	}
+
+}
 
 int ls(char **tokens){
 
+	int i;
+	
+	for (i=0;i<=sizeof(tokens);i++){printf("\nToken[%d] = %s",i,tokens[i]);}
+	
 	int pid = fork();
 	
 		printf("\npid - %d\n",pid);
-	
-		
+
 
 		if (pid == 0){
-			execlp("ls","ls","-a");
-			//execlp(tokens[0],tokens[0],tokens[1]);
+			execlp(tokens[0],tokens[0],tokens[1]);
 		
 		}
 
 		else{
 		
 			wait(NULL);
-			printf("Done ls!\n");
+			printf("\nDone ls!\n");
 		}
 }
 
@@ -65,24 +90,27 @@ int echo(char **tokens){
 	int pid = fork();
 
 	if (pid == 0){
-		
+		printf("\n");
+		//for (i=1;tokens[i] != NULL;i++){printf("%s ",tokens[i]);}
 
-		for (i=1;tokens[i] != NULL;i++){
-		
-			printf("%s ",tokens[i]);
-		
-		
-		}
-
+	printf("\n");	
 	}
 
 	else{
-		
 		wait(NULL);
-		printf("Done echo!\n");
+		printf("\nDone echo!\n");
 	}
 
 }
+
+
+int cd(char **tokens){
+
+	chdir(tokens[1]);
+
+}
+
+
 
 int main(int argc, char* argv[]) {
 	char  line[MAX_INPUT_SIZE];            
@@ -111,20 +139,37 @@ int main(int argc, char* argv[]) {
 		
 		for (i=0;i<=sizeof(tokens);i++){printf("\nToken[%d] = %s",i,tokens[i]);}
 		printf("\n\n");
+		
+		printf("\n\n%d\n\n",strcmp(tokens[0],"ls"));
 
-		if (1==1){
+		if (strcmp(tokens[0],"ls")==0){
 
-			ls(**tokens);
+			ls(tokens);
 		
 		
 		
-		} // if this doesnt work as well might be better to fork here rather than in the function it self
+		}	// if this doesnt work as well might be better to fork here rather than in the function it self
+		if (strcmp(tokens[0],"cat")==0){
+		
+			cat(tokens);
+		
+		}
 
 
+		if (strcmp(tokens[0],"echo")==0){
+		
+			echo(tokens);
+		
+		
+		}
 
+		if (strcmp(tokens[0],"cd")==0){
+		
+			cd(tokens);
+		
+		}
 
-
-
+		//execlp(tokens);
 
 		// Freeing the allocated memory	
 		for(i=0;tokens[i]!=NULL;i++){

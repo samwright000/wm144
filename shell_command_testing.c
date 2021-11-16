@@ -14,7 +14,7 @@ int main(){
 
 	if (pid == 0) {
 	
-		execlp("ls","ls",NULL);
+		execlp("cd","cd",NULL);
 		printf("this will only happen if the exec fails \n");
 
 	
