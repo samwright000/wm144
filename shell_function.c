@@ -9,20 +9,29 @@
 #include <sys/wait.h>
 
 void main(){
-printf("\ndoing ls\n");
-ls();
-printf("\ndone ls\n");
+//printf("\ndoing ls\n");
+//ls();
+//printf("\ndone ls\n");
 //echo();
 //cat();
-printf("\ndoing cd\n");
-cd();
-printf("\ndone cd\n");
-printf("\ndoing ls\n");
-ls();
-printf("\ndone ls\n");
+//printf("\ndoing cd\n");
+//cd();
+//printf("\ndone cd\n");
+//printf("\ndoing ls\n");
+//ls();
+//printf("\ndone ls\n");
 
-chdir("..");
-execlp("ls","ls",NULL);
+//chdir("..");
+//execlp("ls","ls",NULL);
+
+
+	printf("\nbefore sleep\n");
+	//sleep(5);
+	
+	execlp("sleep","sleep",10);
+
+	printf("\nafter sleep\n");
+
 
 }
 
