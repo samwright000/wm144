@@ -44,7 +44,12 @@ int cat(char **tokens){
 	printf("%s",tokens[1]);
 	pid = fork();
 
-	if (pid == 0){
+	if (pid < 0 ){
+	
+		perror("an error has occured");
+	}
+	
+	else if (pid == 0){
 	
 		execlp("cat","cat",tokens[1]);
 	//	execlp(tokens[0],tokens[0],tokens[1]);
@@ -72,14 +77,10 @@ int ls(char **tokens){
 	
 		printf("\npid - %d\n",pid);
 
-
 		if (pid == 0){
-			execlp(tokens[0],tokens[0],tokens[1]);
-		
+			execlp(tokens[0],tokens[0],tokens[1]);	
 		}
-
 		else{
-		
 			wait(NULL);
 			printf("\nDone ls!\n");
 		}
@@ -91,7 +92,7 @@ int echo(char **tokens){
 
 	if (pid == 0){
 		printf("\n");
-		//for (i=1;tokens[i] != NULL;i++){printf("%s ",tokens[i]);}
+		for (i=1;tokens[i] != NULL;i++){printf("%s ",tokens[i]);}
 
 	printf("\n");	
 	}
@@ -100,17 +101,31 @@ int echo(char **tokens){
 		wait(NULL);
 		printf("\nDone echo!\n");
 	}
-
 }
-
 
 int cd(char **tokens){
-
 	chdir(tokens[1]);
-
 }
 
 
+int charToInt(char *c){
+
+	return c - '0';
+
+}
+
+int sleepp(char **tokens){	
+
+	int time = 0;
+
+	time = charToInt(tokens[1]);
+	
+
+	printf("\nTIME: %s\n",tokens[1]);
+	printf("\nTIME: %d\n",time);
+
+	sleep(time);
+}
 
 int main(int argc, char* argv[]) {
 	char  line[MAX_INPUT_SIZE];            
@@ -169,6 +184,13 @@ int main(int argc, char* argv[]) {
 		
 		}
 
+		if (strcmp(tokens[0],"sleep")==0){	
+		
+			sleepp(tokens);
+		}
+
+
+
 		//execlp(tokens);
 
 		// Freeing the allocated memory	
@@ -176,6 +198,8 @@ int main(int argc, char* argv[]) {
 			free(tokens[i]);
 		}
 		free(tokens);
+
+
 
 	}
 	return 0;
